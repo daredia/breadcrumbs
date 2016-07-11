@@ -1,7 +1,7 @@
 TODOs:
 
-- just render the list of urls in chrome history
 - migrate popup to angular and get it working
+- grab and display favicons for each link
 
 
 USEFUL LINKS:
