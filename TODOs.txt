@@ -1,0 +1,10 @@
+TODOs:
+
+- inject separate js file into popup
+- just render the list of urls in chrome history
+- migrate popup to angular and get it working
+
+
+USEFUL LINKS:
+
+http://www.slideshare.net/benlau/making-chrome-extension-with-angularjs
