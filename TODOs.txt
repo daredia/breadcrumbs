@@ -1,7 +1,10 @@
 TODOs:
 
+- enable chrome extension to send linkItem to remote server via post request, perhaps to web historian
+- enable filtering of linkItems displayed in popup
 - migrate popup to angular and get it working
-- grab and display favicons for each link
+- add ng-csp directive to html tag
+- grab and display favicons for each linkItem
 
 
 USEFUL LINKS:
