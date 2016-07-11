@@ -1,0 +1,19 @@
+{
+  "name": "Breadcrumbs",
+  "description": "Find that page you saw that one time",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "history",
+    "http://*/",
+    "https://*/"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Search your Breadcrumbs"
+  },
+  "manifest_version": 2
+}
