@@ -1,0 +1,21 @@
+{
+  "name": "breadcrumbs",
+  "homepage": "https://github.com/daredia/breadcrumbs",
+  "authors": [
+    "Shehzad Daredia <shehzad.daredia@gmail.com>"
+  ],
+  "description": "Find that page you saw that one time",
+  "main": "popup.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

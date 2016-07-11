@@ -1,9 +1,8 @@
 var renderStatus = function(statusText) {
-  document.getElementById('status').textContent = statusText;
+  // document.getElementById('status').textContent = statusText;
+  $('#status').text(statusText);
 };
 
-document.addEventListener('DOMContentLoaded', function(event) { 
-  renderStatus('it\'s working!');  
+$(function() {
+  renderStatus('jquery is working!');  
 });
-
-
