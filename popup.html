@@ -2,8 +2,8 @@
 <html ng-app="angBC" ng-csp>
   <head>
     <title>Breadcrumbs: Find That Page You Saw That One Time</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/popup.css">
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/scripts/app.js"></script>
@@ -13,10 +13,11 @@
     <h1>My Breadcrumbs</h1>
     <div ng-controller="PageController">
       <form name="searchForm" ng-submit="runSearch()" novalidate>
-        <input type="text" name="query" 
+        <input type="text" name="query" class="form-control" autocomplete="off"
         ng-model="searchQuery"
         placeholder="What are you looking for?">
-        <button type="submit" value="Search"> <!-- TODO: add validation -->
+        <button type="submit" value="Search" class="btn btn-primary"> 
+          <!-- TODO: add validation -->
           Search
         </button>
       </form>

@@ -2,7 +2,7 @@ var historyData;
 var serverUrl = 'http://127.0.0.1:3000';
 
 var getHistory = function() {
-  chrome.history.search({text: '', maxResults: 10}, function(data) {
+  chrome.history.search({text: '', maxResults: 20}, function(data) {
     historyData = data.map(function(page) {
       page.url = page.url.split('://')[1];
       return page;

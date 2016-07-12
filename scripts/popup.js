@@ -6,23 +6,31 @@ myApp.controller('PageController', function($scope, $http) {
   $scope.displayedItems = $scope.historyItems;
 
   var serverUrl = bg.serverUrl;
+
   $scope.runSearch = function() {
     var query = $scope.searchQuery;
-
-    $http({
-      method: 'GET',
-      url: serverUrl + '/search?q=' + query
-    })
-    .then(function (resp) {
-      $scope.displayedItems = $scope.historyItems.filter(function(historyItem) {
-        return resp.data.indexOf(historyItem.url) !== -1;
-      });
-    })
-    .catch(function(err) {
-      console.error('GET request failed', err);
-    });
-    
-
+    if (!query) {
+      $scope.displayedItems = $scope.historyItems;
+      $scope.message = 'Recent History:';
+    } else {
+      $http({
+        method: 'GET',
+        url: serverUrl + '/search?q=' + query
+      })
+      .then(function (resp) {
+        $scope.displayedItems = $scope.historyItems.filter(function(historyItem) {
+          return resp.data.indexOf(historyItem.url) !== -1;
+        });
+        if ($scope.displayedItems.length) {
+          $scope.message = 'Crumbs containing "' + query + '":';
+        } else {
+          $scope.message = 'No crumbs containing "' + query + '"';
+        }
+      })
+      .catch(function(err) {
+        console.error('GET request failed', err);
+      });  
+    }
   };
 
 });
