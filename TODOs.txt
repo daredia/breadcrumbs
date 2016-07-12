@@ -1,6 +1,7 @@
 TODOs:
 
 - enable chrome extension to send linkItem to remote server via post request, perhaps to web historian
+- handle sending and receiving multiple linkItems in POST request, not just 1
 - enable filtering of linkItems displayed in popup
 - migrate popup to angular and get it working
 - add ng-csp directive to html tag
@@ -10,3 +11,5 @@ TODOs:
 USEFUL LINKS:
 
 http://www.slideshare.net/benlau/making-chrome-extension-with-angularjs
+
+curl -X POST -F 'url=www.curltest.com' 127.0.0.1:3000
