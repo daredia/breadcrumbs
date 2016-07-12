@@ -1,6 +1,7 @@
 TODOs:
 - figure out why some html isnt being downloaded
 - set chron job
+- add 'clear' button to reset view rather than having to submit a blank query
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
 - grab and display favicons for each linkItem

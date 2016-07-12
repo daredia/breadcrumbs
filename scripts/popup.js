@@ -8,7 +8,7 @@ myApp.controller('PageController', function($scope, $http) {
   var serverUrl = bg.serverUrl;
 
   $scope.runSearch = function() {
-    var query = $scope.searchQuery;
+    var query = $scope.searchQuery.toLowerCase();
     if (!query) {
       $scope.displayedItems = $scope.historyItems;
       $scope.message = 'Recent History:';
@@ -19,7 +19,11 @@ myApp.controller('PageController', function($scope, $http) {
       })
       .then(function (resp) {
         $scope.displayedItems = $scope.historyItems.filter(function(historyItem) {
-          return resp.data.indexOf(historyItem.url) !== -1;
+          console.log('historyItem:', historyItem);
+          var found = historyItem.title.toLowerCase().includes(query);
+          console.log('query found in title:', found);
+          found = found || resp.data.indexOf(historyItem.url) !== -1;
+          return found;
         });
         if ($scope.displayedItems.length) {
           $scope.message = 'Crumbs containing "' + query + '":';
