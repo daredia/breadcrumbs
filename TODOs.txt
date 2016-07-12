@@ -1,5 +1,4 @@
 TODOs:
-
 - migrate popup to angular and get it working
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
