@@ -13,4 +13,5 @@ http://www.slideshare.net/benlau/making-chrome-extension-with-angularjs
 
 curl -X POST -F 'url=www.curltest.com' 127.0.0.1:3000
 
-chrome extensions cannot launch a server
+chrome extensions cannot launch a server, but it can communicate with remote servers
+chrome extensions cannot execute inline js, so angular would be tricky
