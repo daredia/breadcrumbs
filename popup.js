@@ -3,9 +3,11 @@ var renderStatus = function(statusText) {
 };
 
 $(function() {
-  renderStatus('My Crumbs:');
+  // renderStatus('My Crumbs:');
 
-  var history = chrome.extension.getBackgroundPage().historyData;
+  var bg = chrome.extension.getBackgroundPage();
+  var serverUrl = bg.serverUrl;
+  var history = bg.historyData;
   var $hList = $('<ul>');
   $.each(history, function(i) {
     var $li = $('<li/>')
@@ -17,6 +19,25 @@ $(function() {
         .appendTo($li);
   });
   $('body').append($hList);
+
+  $('form').on('submit', function(e) {
+    console.log('inside submit handler');
+    var query = $('#searchQuery').val();
+
+    $.ajax({
+      url: serverUrl + '/search?q=' + query,
+      type: 'GET',
+      contentType: 'application/json',
+      success: function(data) {
+        console.log('data from GET request: ', data);
+      },
+      error: function(data) {
+        console.error('GET request failed');
+      }
+    });
+
+    e.preventDefault();
+  });
 
 });
 

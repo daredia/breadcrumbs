@@ -1,8 +1,8 @@
 TODOs:
 
+- enable searching and filtering of linkItems displayed in popup
 - migrate popup to angular and get it working
 - handle sending and receiving multiple linkItems in POST request, not just 1
-- enable searching and filtering of linkItems displayed in popup
 - migrate serverside code to separate repo instead of web historian
 - add ng-csp directive to html tag
 - grab and display favicons for each linkItem
