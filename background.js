@@ -9,7 +9,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       data.forEach(function(page) {
         console.log(page.url);
         // issue a POST request to 127.0.0.1:3000 with 'url=www.curltest.com'
-        sendUrl(page.url);
+        if (page.url.includes('stackoverflow')) {
+          sendUrl(page.url);  
+        }
       });
     });
   }  

@@ -5,8 +5,7 @@
   "permissions": [
     "activeTab",
     "history",
-    "http://*/",
-    "https://*/"
+    "http://stackoverflow.com/*"
   ],
   "background": {
     "scripts": ["background.js"],
