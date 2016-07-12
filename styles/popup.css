@@ -1,0 +1,13 @@
+body {
+  min-width: 800px;
+  width: 800px;
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+}
+      
+#popup { /*do i need this?*/
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 400px;
+}

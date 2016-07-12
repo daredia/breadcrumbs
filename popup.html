@@ -1,31 +1,29 @@
 <!doctype html>
-<html>
+<html ng-app="angBC" ng-csp>
   <head>
     <title>Breadcrumbs: Find That Page You Saw That One Time</title>
-    <style>
-      body {
-        width: 800px;
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
+    <link rel="stylesheet" href="/styles/popup.css">
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="popup.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/popup.js"></script>
   </head>
-  <body>
-    <div id="status">
-      <h1>My Crumbs</h1>
-      <form>
-        <input type="text" name="query" placeholder="Search" id="searchQuery">
-        <input type="submit">
-      </form>
+  <body id="popup">
+    <h1>My Breadcrumbs</h1>
+    <div ng-controller="PageController">
+      <h3>{{ message }}</h3>
+      <ul>
+        <li ng-repeat="historyItem in historyItems">
+          <a target="_blank" href="http://{{ historyItem.url }}">
+            {{ historyItem.title }}
+          </a>
+        </li>
+      </ul>
     </div>
+    <!-- <form>
+      <input type="text" name="query" placeholder="Search" id="searchQuery">
+      <input type="submit">
+    </form> -->
   </body>
 </html>

@@ -5,10 +5,10 @@
   "permissions": [
     "activeTab",
     "history",
-    "http://stackoverflow.com/*"
+    "*://*/*"
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["/scripts/background.js"],
     "persistent": false
   },
   "browser_action": {
