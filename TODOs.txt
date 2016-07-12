@@ -1,6 +1,9 @@
 TODOs:
-- add form submitHandler method to $scope and then remove jquery
+- styling
+- figure out why more history items arent being displayed
+- figure out why some html isnt being downloaded
 - handle sending and receiving multiple linkItems in POST request, not just 1
+- set chron job
 - migrate serverside code to separate repo instead of web historian
 - grab and display favicons for each linkItem
 - ignore certain sites (gmail, etc)

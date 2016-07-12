@@ -22,9 +22,9 @@
       </form>
       <h3>{{ message }}</h3>
       <ul>
-        <li ng-repeat="historyItem in historyItems">
-          <a target="_blank" href="http://{{ historyItem.url }}">
-            {{ historyItem.title }}
+        <li ng-repeat="displayedItem in displayedItems">
+          <a target="_blank" href="http://{{ displayedItem.url }}">
+            {{ displayedItem.title }}
           </a>
         </li>
       </ul>
