@@ -1,4 +1,5 @@
 TODOs:
+- add form submitHandler method to $scope and then remove jquery
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
 - grab and display favicons for each linkItem

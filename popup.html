@@ -12,6 +12,14 @@
   <body id="popup">
     <h1>My Breadcrumbs</h1>
     <div ng-controller="PageController">
+      <form name="searchForm" ng-submit="runSearch()" novalidate>
+        <input type="text" name="query" 
+        ng-model="searchQuery"
+        placeholder="What are you looking for?">
+        <button type="submit" value="Search"> <!-- TODO: add validation -->
+          Search
+        </button>
+      </form>
       <h3>{{ message }}</h3>
       <ul>
         <li ng-repeat="historyItem in historyItems">
@@ -21,9 +29,5 @@
         </li>
       </ul>
     </div>
-    <!-- <form>
-      <input type="text" name="query" placeholder="Search" id="searchQuery">
-      <input type="submit">
-    </form> -->
   </body>
 </html>
