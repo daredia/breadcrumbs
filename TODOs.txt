@@ -1,19 +1,15 @@
 TODOs:
 - figure out why some html isnt being downloaded
 - set chron job
+- grab and display favicons for each linkItem
 - add 'clear' button to reset view rather than having to submit a blank query
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
-- grab and display favicons for each linkItem
 - ignore certain sites (gmail, etc)
 
 
-USEFUL LINKS:
-
-http://www.slideshare.net/benlau/making-chrome-extension-with-angularjs
-
-curl -X POST -F 'url=www.curltest.com' 127.0.0.1:3000
-
+- DONT FORGET TO refresh the github readme page before demoing breadcrumbs
 - chrome extensions run as a local website that cant launch a server or external storage, but it can communicate with remote servers
-- chrome extensions cannot execute inline js, so angular would be a bit tricky
+- chrome extensions cannot execute inline js, so using angular is a bit tricky
 - chrome extensions are a bit sandboxed, the popup cant communicate with chrome's APIs directly but it can communicate with a background page, and that background page can talk to chrome APIs
+- the extension keys off of your chrome history, so even if you sometimes use a browser that doesnt have the extension (like say a pairing station or on your phone), using the extension later will still be able to search that history

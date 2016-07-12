@@ -2,7 +2,9 @@ myApp.controller('PageController', function($scope, $http) {
   $scope.message = 'Recent History:';
   // TODO: refactor some logic out into a factory/service if i get repetitive
   var bg = chrome.extension.getBackgroundPage();
-  $scope.historyItems = bg.historyData;
+  $scope.historyItems = bg.historyData.filter(function(historyItem) {
+    return historyItem.title;
+  });
   $scope.displayedItems = $scope.historyItems;
 
   var serverUrl = bg.serverUrl;
