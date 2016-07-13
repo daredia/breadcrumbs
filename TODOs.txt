@@ -1,7 +1,6 @@
 TODOs:
 - fetch html once and store in memory on client, then use angular filters to search
 - grab and display favicons for each linkItem
-- fix bug where bg is null because background script isnt loaded/running, and hence it shows {{ message }} in the view
 - add 'clear' button to reset view rather than having to submit a blank query
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
@@ -9,7 +8,8 @@ TODOs:
 - ignore certain sites (gmail, etc)
 
 
-- DONT FORGET TO refresh the github readme page before demoing breadcrumbs
+-type location.reload(true) in chrome devtools once the popup and devtools are open, and it will reload the popup and let you debug
+
 - chrome extensions run as a local website that cant launch a server or external storage, but it can communicate with remote servers
 - chrome extensions cannot execute inline js, so using angular is a bit tricky
 - chrome extensions are a bit sandboxed, the popup cant communicate with chrome's APIs directly but it can communicate with a background page, and that background page can talk to chrome APIs
