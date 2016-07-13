@@ -3,8 +3,6 @@ body {
   margin: 30px;
   
   /*min-width: 800px;
-  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-  font-size: 100%;
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;*/
@@ -12,7 +10,7 @@ body {
 
 .form-control {
   display: inline;
-  width: 200px;
+  width: 550px;
   margin-top: 5px
 }
 

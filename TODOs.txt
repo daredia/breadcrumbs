@@ -1,10 +1,11 @@
 TODOs:
-- figure out why some html isnt being downloaded
-- set chron job
+- fetch html once and store in memory on client, then use angular filters to search
 - grab and display favicons for each linkItem
+- fix bug where bg is null because background script isnt loaded/running, and hence it shows {{ message }} in the view
 - add 'clear' button to reset view rather than having to submit a blank query
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
+- set chron job
 - ignore certain sites (gmail, etc)
 
 
