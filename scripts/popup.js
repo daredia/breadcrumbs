@@ -5,7 +5,6 @@ myApp.controller('PageController', function($scope, $http) {
   $scope.historyItems = bg.historyData.filter(function(historyItem) {
     return historyItem.title;
   });
-  $scope.displayedItems = $scope.historyItems;
 
   var serverUrl = bg.serverUrl;
 
@@ -15,27 +14,23 @@ myApp.controller('PageController', function($scope, $http) {
       url: serverUrl + '/search?q='
     })
     .then(function (resp) {
-      console.log('resp.data in fetchAll:', resp.data);
-      // $scope.displayedItems = $scope.historyItems.filter(function(historyItem) {
-      //   console.log('historyItem:', historyItem);
-      //   var found = historyItem.title.toLowerCase().includes(query);
-      //   console.log('query found in title:', found);
-      //   found = found || resp.data.indexOf(historyItem.url) !== -1;
-      //   return found;
-      // });
-      // if ($scope.displayedItems.length) {
-      //   $scope.message = 'Crumbs containing "' + query + '":';
-      // } else {
-      //   $scope.message = 'No crumbs containing "' + query + '"';
-      // }
+      $scope.historyItems = $scope.historyItems.map(function(item) {
+        var url = item.url;
+        item.content = resp.data[url] ? resp.data[url] : '';
+        return item;
+      });
+
+      $scope.displayedItems = $scope.historyItems;
+
     })
     .catch(function(err) {
       console.error('GET request failed in fetchAll', err);
     });
   };
 
-  // $scope.fetchAll();
+  $scope.fetchAll();
 
+  // TODO: get rid of this function or consider making it do something else
   $scope.runSearch = function() {
     var query = $scope.searchQuery ? $scope.searchQuery.toLowerCase() : '';
     if (!query) {
@@ -48,9 +43,7 @@ myApp.controller('PageController', function($scope, $http) {
       })
       .then(function (resp) {
         $scope.displayedItems = $scope.historyItems.filter(function(historyItem) {
-          console.log('historyItem:', historyItem);
           var found = historyItem.title.toLowerCase().includes(query);
-          console.log('query found in title:', found);
           found = found || resp.data.indexOf(historyItem.url) !== -1;
           return found;
         });

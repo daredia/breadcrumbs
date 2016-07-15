@@ -1,11 +1,14 @@
 TODOs:
-- fetch html once and store in memory on client, then use angular filters to search
 - grab and display favicons for each linkItem
-- add 'clear' button to reset view rather than having to submit a blank query
+- consider fetching html once and store in memory on the server
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
+- use database instead of file system
+- create favicon for extension
+- search the text on the page rather than the full html markup
+- add 'clear' button to reset view rather than having to submit a blank query
 - set chron job
-- ignore certain sites (gmail, etc)
+- ignore certain sites (gmail, sites that require login like facebook, etc)
 
 
 -type location.reload(true) in chrome devtools once the popup and devtools are open, and it will reload the popup and let you debug
