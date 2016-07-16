@@ -1,9 +1,11 @@
 TODOs:
+- make worker store html in database instead of file system
 - grab and display favicons for each linkItem
-- consider fetching html once and store in memory on the server
+- create 2 angular views, 1 for bullets and 1 for thumbs
+- consider fetching html from db once and store in memory on the server
 - handle sending and receiving multiple linkItems in POST request, not just 1
 - migrate serverside code to separate repo instead of web historian
-- use database instead of file system
+- fix issue where title is not appearing for some, and/or filter them out
 - create favicon for extension
 - search the text on the page rather than the full html markup
 - add 'clear' button to reset view rather than having to submit a blank query

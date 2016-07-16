@@ -2,26 +2,18 @@ myApp.controller('PageController', function($scope, $http) {
   $scope.message = 'Recent History:';
   // TODO: refactor some logic out into a factory/service if i get repetitive
   var bg = chrome.extension.getBackgroundPage();
-  $scope.historyItems = bg.historyData.filter(function(historyItem) {
-    return historyItem.title;
-  });
+  $scope.historyItems = bg.historyData;
 
   var serverUrl = bg.serverUrl;
 
   $scope.fetchAll = function() {
     $http({
       method: 'GET',
-      url: serverUrl + '/search?q='
+      url: serverUrl
     })
     .then(function (resp) {
-      $scope.historyItems = $scope.historyItems.map(function(item) {
-        var url = item.url;
-        item.content = resp.data[url] ? resp.data[url] : '';
-        return item;
-      });
-
+      $scope.historyItems = resp.data;
       $scope.displayedItems = $scope.historyItems;
-
     })
     .catch(function(err) {
       console.error('GET request failed in fetchAll', err);

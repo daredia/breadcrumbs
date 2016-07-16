@@ -25,7 +25,7 @@
       <h3>{{ message }}</h3>
       <ul>
         <li ng-repeat="displayedItem in displayedItems | filter:searchQuery">
-          <a target="_blank" href="http://{{ displayedItem.url }}">
+          <a target="_blank" href="{{ displayedItem.url }}">
             {{ displayedItem.title }}
           </a>
         </li>
