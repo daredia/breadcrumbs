@@ -1,27 +1,25 @@
 var historyData;
-var serverUrl = 'http://127.0.0.1:3000';
+var serverUrl = 'http://localhost:8080/api/pages';
 
 var getHistory = function() {
-  chrome.history.search({text: '', maxResults: 50}, function(data) {
-    historyData = data.map(function(page) {
-      page.url = page.url.split('://')[1];
-      return page;
-    })
-    .filter(function(page) {
-      return !page.url.includes('google.com');
+  chrome.history.search({text: '', maxResults: 1}, function(data) {
+    // array of objects 
+    console.log('chrome history data:', data);
+    historyData = data.filter(function(page) {
+      return !page.url.includes('google.com'); // TODO: create a blacklist of URLs
     });
     historyData.forEach(function(page) {
-      if (!page.url.includes('google.com')) { //TODO: create a blacklist of URLs
-        sendUrl(page.url);
-      }
+      sendPage(page);
     });
   });
 };
 
-var sendUrl = function(url) {
+var sendPage = function(page) {
   var x = new XMLHttpRequest();
   x.open('POST', serverUrl);
-  var urlEncodedData = encodeURIComponent('url') + '=' + encodeURIComponent(url);
+  var urlEncodedData = '';
+  urlEncodedData += encodeURIComponent('url') + '=' + encodeURIComponent(page.url);
+  urlEncodedData += '&' + encodeURIComponent('title') + '=' + encodeURIComponent(page.title);
   x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   x.send(urlEncodedData);
 
