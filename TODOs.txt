@@ -1,4 +1,5 @@
 TODOs:
+- reenable developer mode so i can test
 - make worker store html in database instead of file system
 - grab and display favicons for each linkItem
 - create 2 angular views, 1 for bullets and 1 for thumbs

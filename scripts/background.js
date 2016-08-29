@@ -1,5 +1,5 @@
 var historyData;
-var serverUrl = 'http://localhost:8080/api/pages';
+var serverUrl = 'http://localhost:8082/api/pages';
 
 var getHistory = function() {
   chrome.history.search({text: '', maxResults: 50}, function(data) {
